@@ -1,0 +1,142 @@
+/* Google font */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+/* Tailwind CSS */
+@import "tailwindcss";
+
+/* Tailwind Custom Settings */
+@theme {
+    --font-red-hat-display: "Red Hat Display", serif;
+    /* --font-body: var(--font-red-hat-display); */
+
+    /* Color variable */
+    --color-main: #2970cc;
+    --color-main-2: #45c7ff;
+    --color-main-shade: #e5e8ff;
+    --color-main-shade-2: #ECF9FF;
+    --color-danger: #ff5050;
+    --color-success: #30d287;
+    --color-success-light: #e8fff4;
+    --color-warning: #ffc362;
+    --color-warning-light: #fff8ec;
+    --color-dark-1: #001924;
+    --color-dark-2: #54616b;
+    --color-dark-3: #8e99a1;
+    --color-dark-4: #bbc5cd;
+    --color-dark-5: #d8dfe5;
+    --color-dark-7: #f5f7f8;
+    --color-dark-8: #f7f7f7;
+    --color-dark-9: #e9edf0;
+    --color-dark-10: #f1f1f1;
+}
+
+:root {
+    font-family: var(--font-red-hat-display);
+    font-weight: normal;
+
+    /* color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+/* @media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+} */
+
+/* Login page style -start */
+.login-signup-bg {
+    background: url(../src/assets/images/login-page-bg.jpg) no-repeat center
+        center;
+    background-size: cover;
+}
+/* Login page style -end */
+
+/* Property search filter */
+.property-search-filter-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+}
+
+/* Property search filter */
+
+/* Browser prefix css for Input type number arrow */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+/* Browser prefix css for Input type number arrow */
+
+/* Sidebar menu - start */
+.sidebar-menu ul li span svg * {
+    transition: all 200ms linear;
+}
+.sidebar-menu ul li:hover span svg * {
+    fill: var(--color-main-2);
+}
+/* Sidebar menu - end */
+
+/* Dashboard Header */
+.search-field {
+    background: url("../src/assets/images/search-icon.svg") no-repeat;
+    background-size: 24px 24px;
+    background-position-x: 16px;
+    background-position-y: 50%;
+}
+/* Dashboard Header */
+
+/* Card style */
+
+.property-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 3px;
+    background: linear-gradient(134deg, #ffffff 0%, rgba(255, 255, 255, 1) 40%);
+    -webkit-mask: linear-gradient(
+                106deg,
+                rgb(255, 255, 255) 1%,
+                rgb(255, 255, 255) 100%
+            )
+            content-box,
+        linear-gradient(106deg, rgb(255, 255, 255) 1%, rgb(255, 255, 255) 100%);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+.property-card:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    padding: 3px;
+    background: linear-gradient(134deg, #2970cc 0%, rgba(255, 255, 255, 1) 40%);
+    -webkit-mask: linear-gradient(
+                106deg,
+                rgb(255, 255, 255) 1%,
+                rgb(255, 255, 255) 100%
+            )
+            content-box,
+        linear-gradient(106deg, rgb(255, 255, 255) 1%, rgb(255, 255, 255) 100%);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+/* Card style */
+
+/* Tab CSS for Overview */
+button[data-state="active"] {
+    background: var(--color-main);
+    color: white;
+}
+/* Tab CSS for Overview */
