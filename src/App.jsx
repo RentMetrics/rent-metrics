@@ -3,7 +3,8 @@ import NotFound from "./components/NotFound/NotFound";
 import DashboardLayout from "./layouts/DashboardLayout/DashboardLayout";
 import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout";
 import AddNewProperty from "./pages/AddNewProperty/AddNewProperty";
-import AIAssetManager from "./pages/AIAssetManager/AIAssetManager";
+import AssetIntelligence from "./pages/AssetIntelligence/AssetIntelligence";
+import FinancialOverview from "./pages/FinancialOverview/FinancialOverview";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Marketing from "./pages/Marketing/Marketing";
 import NoPropertiesFound from "./pages/NoPropertiesFound/NoPropertiesFound";
@@ -13,7 +14,6 @@ import RequestDemo from "./pages/RequestDemo/RequestDemo";
 import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp/SignUp";
 import ThankYou from "./pages/ThankYou/ThankYou";
-import Valuation from "./pages/Valuation/Valuation";
 import Welcome from "./pages/Welcome/Welcome";
 
 const router = createBrowserRouter([
@@ -53,22 +53,6 @@ const router = createBrowserRouter([
         path: "/dashboard/",
         element: <DashboardLayout />,
         children: [
-            { path: "valuation", element: <Valuation /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
-    },
-    {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
-        children: [
-            { path: "ai-asset-manager", element: <AIAssetManager /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
-    },
-    {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
-        children: [
             { path: "property-summary", element: <PropertySummary /> },
             { path: "property-summary/overview", element: <Overview /> },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
@@ -80,6 +64,32 @@ const router = createBrowserRouter([
         children: [
             { path: "marketing", element: <Marketing /> },
             // { path: "property-summary/overview", element: <Overview /> },
+            // { path: "/add-new-properties", element: <AddNewProperty /> },
+        ],
+    },
+
+    {
+        path: "/dashboard/",
+        element: <DashboardLayout />,
+        children: [
+            { path: "valuation", element: <Marketing /> },
+            // { path: "/add-new-properties", element: <AddNewProperty /> },
+        ],
+    },
+    {
+        path: "/dashboard/",
+        element: <DashboardLayout />,
+        children: [
+            { path: "asset-intelligence", element: <AssetIntelligence /> },
+            // { path: "/add-new-properties", element: <AddNewProperty /> },
+        ],
+    },
+    {
+        path: "/dashboard/",
+        element: <DashboardLayout />,
+        children: [
+            // { path: "financial", element: <FinancialOverview /> },
+            { path: "financial/overview", element: <FinancialOverview /> },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
         ],
     },

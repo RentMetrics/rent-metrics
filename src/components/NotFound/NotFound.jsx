@@ -20,7 +20,7 @@ export default function NotFound() {
             </p>
             {/* <p>{error.statusText || error.message}</p> */}
             <Link
-                to="/"
+                to="/dashboard"
                 className="text-base px-6 py-[14px] bg-main rounded-lg text-white font-black transition-colors duration-200 hover:bg-main-shade hover:text-main cursor-pointer inline-flex items-center gap-[10px] group col-auto mt-8 mb-12 group"
             >
                 <svg

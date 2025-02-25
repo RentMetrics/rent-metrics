@@ -10,7 +10,7 @@ import toursIcon from "../../assets/images/tours-icon.svg";
 import ConversionLeasingAgentChart from "../../components/Charts/ConversionLeasingAgentChart/ConversionLeasingAgentChart";
 import ConversionMonthChart from "../../components/Charts/ConversionMonthChart/ConversionMonthChart";
 import ConversionSourceChart from "../../components/Charts/ConversionSourceChart/ConversionSourceChart";
-import MonthlyPropertyChart from "../../components/Charts/MonthlyPropertyChart/MonthlyPropertyChart";
+import PropertyConversionChart from "../../components/Charts/PropertyConversionChart/PropertyConversionChart";
 
 export default function Marketing() {
     return (
@@ -151,7 +151,7 @@ export default function Marketing() {
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-6">
-                    <MonthlyPropertyChart />
+                    <PropertyConversionChart />
                     <ConversionMonthChart />
                     <ConversionSourceChart />
                     <ConversionLeasingAgentChart />

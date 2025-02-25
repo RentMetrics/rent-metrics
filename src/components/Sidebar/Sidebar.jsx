@@ -48,7 +48,7 @@ const menuItems = [
         ],
     },
     {
-        title: "A.I. Asset Manager",
+        title: "Asset Intelligence",
         icon: (
             <svg
                 width="20"
@@ -70,10 +70,11 @@ const menuItems = [
                 </defs>
             </svg>
         ),
-        path: "/dashboard/ai-asset-manager",
+        path: "/dashboard/asset-intelligence",
     },
     {
         title: "Financial",
+        path: "/dashboard/financial/overview",
         icon: (
             <svg
                 width="20"
@@ -89,7 +90,7 @@ const menuItems = [
             </svg>
         ),
         submenu: [
-            { title: "Overview ", path: "/overview " },
+            { title: "Overview ", path: "/dashboard/financial/overview" },
             { title: "Statement", path: "/statement" },
             { title: "Budget Variance", path: "/budget-variance" },
         ],
@@ -367,18 +368,21 @@ export default function Sidebar() {
                                             : "max-h-0"
                                     }`}
                                 >
-                                    {item.submenu.map((subItem, index) => (
-                                        <li
-                                            key={index}
-                                            className="pl-6 flex items-center p-2 transition-all duration-300 text-dark-4 text-sm cursor-pointer hover:bg-[#001E2C] hover:text-main-2"
+                                    {item.submenu.map((subItem) => (
+                                        <Link
+                                            to={subItem.path}
+                                            key={subItem.title}
+                                            className="pl-6 flex items-center
+                                            p-2 transition-all duration-300
+                                            text-dark-4 text-sm cursor-pointer
+                                            hover:bg-[#001E2C]
+                                            hover:text-main-2"
                                         >
-                                            <Link to={subItem.path}>
-                                                <span className="w-5" />
-                                                <span className="pl-3">
-                                                    {subItem.title}
-                                                </span>
-                                            </Link>
-                                        </li>
+                                            <span className="w-5" />
+                                            <span className="pl-3">
+                                                {subItem.title}
+                                            </span>
+                                        </Link>
                                     ))}
                                 </ul>
                             )}

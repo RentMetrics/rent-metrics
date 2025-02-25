@@ -12,7 +12,7 @@
     --color-main: #2970cc;
     --color-main-2: #45c7ff;
     --color-main-shade: #e5e8ff;
-    --color-main-shade-2: #ECF9FF;
+    --color-main-shade-2: #ecf9ff;
     --color-danger: #ff5050;
     --color-success: #30d287;
     --color-success-light: #e8fff4;
@@ -135,8 +135,59 @@ input[type="number"] {
 /* Card style */
 
 /* Tab CSS for Overview */
-button[data-state="active"] {
+button[data-headlessui-state="selected"] {
     background: var(--color-main);
     color: white;
+    outline: none;
+    outline-offset: none;
+    border: none;
+}
+button[data-headlessui-state="selected"]:hover {
+    outline: none;
+    border: none;
+}
+button[data-headlessui-state="selected"]:focus {
+    outline: none !important;
+    border: none !important;
+}
+button[data-headlessui-state="selected"]:focus-visible {
+    outline: none !important;
+    border: none !important;
 }
 /* Tab CSS for Overview */
+
+/* Scrollbar -start */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(136, 74, 57, 1); */
+    background-color: #f0eceb;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); */
+    background: #d6cdcb;
+}
+/* Scrollbar -end */
+
+/* Custom progress bar style */
+/* @layer utilities {
+    .custom-progress {
+        @apply appearance-none min-w-64 w-full h-4;
+    }
+
+    .custom-progress::-webkit-progress-bar {
+        @apply bg-gray-200 rounded-md;
+    }
+
+    .custom-progress::-webkit-progress-value {
+        @apply bg-blue-500 rounded-md;
+    }
+
+    .custom-progress::-moz-progress-bar {
+        @apply bg-blue-500 rounded-md;
+    }
+} */
+/* Custom progress bar style */
