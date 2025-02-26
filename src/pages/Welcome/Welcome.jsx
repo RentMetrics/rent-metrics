@@ -22,8 +22,18 @@ export default function Welcome() {
 
                         {/* Button group */}
                         <div className="grid gap-5">
-                            <Link to="/sign-in" className="flex justify-center py-[14px] px-6 rounded-lg bg-main-shade text-main text-base font-black h-13 transition-colors duration-200 hover:bg-main hover:text-white">Sign In</Link>
-                            <Link to="/sign-up" className="flex justify-center py-[14px] px-6 rounded-lg bg-main text-white text-base font-black h-13 transition-colors duration-200 hover:bg-main-shade hover:text-main">Sign Up</Link>
+                            <Link
+                                to="/sign-in"
+                                className="flex justify-center py-[14px] px-6 rounded-lg bg-main-shade text-main text-base font-black h-13 transition-colors duration-200 hover:bg-main hover:text-white"
+                            >
+                                Sign In
+                            </Link>
+                            <Link
+                                to="/sign-up"
+                                className="flex justify-center py-[14px] px-6 rounded-lg bg-main text-white text-base font-black h-13 transition-colors duration-200 hover:bg-main-shade hover:text-main"
+                            >
+                                Sign Up
+                            </Link>
                         </div>
                         {/* Button group */}
                     </div>

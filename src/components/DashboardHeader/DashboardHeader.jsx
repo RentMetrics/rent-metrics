@@ -1,6 +1,9 @@
+import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/clerk-react";
 import userImg from "../../assets/images/user-image.png";
 
 export default function DashboardHeader() {
+    const { user } = useUser();
+
     return (
         <section className="px-8 grid grid-cols-12 gap-6 py-4 bg-white mb-[-70px] relative z-10">
             {/* Search Box */}
@@ -75,13 +78,27 @@ export default function DashboardHeader() {
 
                     {/* Name & Avatar */}
                     <div className="flex items-center gap-3 relative before:absolute before:content-[''] before:-left-6 before:top-[calc(50%-9px)] before:h-[18px] before:w-[1px] before:bg-dark-4 ">
-                        <div className="text-sm text-dark-2">John Doe</div>
-                        <img
-                            src={userImg}
-                            alt="User Avatar"
-                            className="w-9 h-9 rounded-full"
-                        />
+                        <SignedIn>
+                            {/* Display the actual user's name */}
+                            <div className="text-sm text-dark-2">
+                                {user
+                                    ? `${user.firstName || ""}`
+                                    : "Loading..."}
+                            </div>
+                            <UserButton />
+                        </SignedIn>
+                        <SignedOut>
+                            <div className="text-sm text-dark-2">
+                                Guest User
+                            </div>
+                            <img
+                                src={userImg}
+                                alt="User Avatar"
+                                className="w-9 h-9 rounded-full"
+                            />
+                        </SignedOut>
                     </div>
+                    {/* User */}
                 </div>
             </div>
         </section>

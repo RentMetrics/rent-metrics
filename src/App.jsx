@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import {
+    createBrowserRouter,
+    Navigate,
+    RouterProvider,
+} from "react-router-dom";
 import NotFound from "./components/NotFound/NotFound";
 import DashboardLayout from "./layouts/DashboardLayout/DashboardLayout";
 import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout";
@@ -11,92 +16,127 @@ import NoPropertiesFound from "./pages/NoPropertiesFound/NoPropertiesFound";
 import Overview from "./pages/Overview/Overview";
 import PropertySummary from "./pages/PropertySummary/PropertySummary";
 import RequestDemo from "./pages/RequestDemo/RequestDemo";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
+// import SignIn from "./pages/SignIn/SignIn";
+// import SignUp from "./pages/SignUp/SignUp";
+import SignInComponent from "./components/SignInComponent/SignInComponent";
+import SignUpComponent from "./components/SignUpComponent/SignUpComponent";
+import Occupancy from "./pages/Occupancy/Occupancy";
 import ThankYou from "./pages/ThankYou/ThankYou";
+import Valuation from "./pages/Valuation/Valuation";
 import Welcome from "./pages/Welcome/Welcome";
 
+// **Protected Route Component**
+const ProtectedRoute = ({ children }) => {
+    return (
+        <>
+            <SignedIn>{children}</SignedIn>
+            <SignedOut>
+                <Navigate to="/sign-in" replace />
+            </SignedOut>
+        </>
+    );
+};
+
+// OAuth Callback Component
+const OAuthCallback = () => {
+    // This component can be empty - Clerk will handle the redirect
+    return (
+        <div className="grid place-items-center h-screen">
+            Processing authentication...
+        </div>
+    );
+};
+
 const router = createBrowserRouter([
+    // Public routes
     {
         path: "/",
-        element: <Welcome />, // Only needed if this page has loaders/actions
+        element: (
+            <SignedOut>
+                <Welcome />
+            </SignedOut>
+        ),
     },
     {
         path: "/sign-in",
-        element: <SignIn />,
+        element: (
+            <SignedOut>
+                <SignInComponent />
+            </SignedOut>
+        ),
     },
     {
         path: "/sign-up",
-        element: <SignUp />,
+        element: (
+            <SignedOut>
+                <SignUpComponent />
+            </SignedOut>
+        ),
     },
     {
         path: "/forgot-password",
-        element: <ForgotPassword />,
+        element: (
+            <SignedOut>
+                <ForgotPassword />
+            </SignedOut>
+        ),
     },
     {
         path: "/request-demo",
-        element: <RequestDemo />,
+        element: (
+            <SignedOut>
+                <RequestDemo />
+            </SignedOut>
+        ),
     },
     {
         path: "/thank-you",
-        element: <ThankYou />,
+        element: (
+            <SignedOut>
+                <ThankYou />
+            </SignedOut>
+        ),
     },
+
+    // ADD THIS ROUTE - Critical for OAuth callbacks
     {
-        path: "/",
-        element: <LoadPropertyLayout />,
-        children: [
-            { path: "/properties", element: <NoPropertiesFound /> },
-            { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
+        path: "/sso-callback",
+        element: <OAuthCallback />,
     },
+
     {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
+        path: "/dashboard/properties/",
+        element: (
+            <ProtectedRoute>
+                <LoadPropertyLayout />
+            </ProtectedRoute>
+        ),
         children: [
-            { path: "property-summary", element: <PropertySummary /> },
-            { path: "property-summary/overview", element: <Overview /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
-    },
-    {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
-        children: [
-            { path: "marketing", element: <Marketing /> },
-            // { path: "property-summary/overview", element: <Overview /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
+            { path: "", element: <NoPropertiesFound /> },
+            { path: "add-new-properties", element: <AddNewProperty /> },
         ],
     },
 
     {
         path: "/dashboard/",
-        element: <DashboardLayout />,
+        element: (
+            <ProtectedRoute>
+                <DashboardLayout />
+            </ProtectedRoute>
+        ),
         children: [
-            { path: "valuation", element: <Marketing /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
-    },
-    {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
-        children: [
+            { path: "property-summary", element: <PropertySummary /> },
+            { path: "property-summary/overview", element: <Overview /> },
+            { path: "marketing", element: <Marketing /> },
+            { path: "valuation", element: <Valuation /> },
             { path: "asset-intelligence", element: <AssetIntelligence /> },
-            // { path: "/add-new-properties", element: <AddNewProperty /> },
-        ],
-    },
-    {
-        path: "/dashboard/",
-        element: <DashboardLayout />,
-        children: [
-            // { path: "financial", element: <FinancialOverview /> },
             { path: "financial/overview", element: <FinancialOverview /> },
+            { path: "operations/occupancy", element: <Occupancy /> },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
         ],
     },
-    {
-        path: "*",
-        element: <NotFound />, // 404 handler
-    },
+    // **404 Not Found Route**
+    { path: "*", element: <NotFound /> },
 ]);
 
 export default function App() {

@@ -76,7 +76,7 @@ export default function PropertiesNotFoundCard() {
 
                 {/* Search Button */}
                 <Link
-                    to="/add-new-properties"
+                    to="/dashboard/properties/add-new-properties"
                     className="text-base px-6 py-[14px] bg-main rounded-lg text-white font-black transition-colors duration-200 hover:bg-main-shade hover:text-main cursor-pointer inline-flex items-center gap-[10px] group col-auto mt-8 mb-12"
                 >
                     <svg

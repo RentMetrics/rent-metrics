@@ -97,6 +97,7 @@ const menuItems = [
     },
     {
         title: "Operations",
+        path: "/dashboard/operations/occupancy",
         icon: (
             <svg
                 width="20"
@@ -120,10 +121,15 @@ const menuItems = [
                 </defs>
             </svg>
         ),
-        path: "/notifications",
+        submenu: [
+            { title: "Occupancy ", path: "/dashboard/operations/occupancy" },
+            { title: "Statement", path: "" },
+            { title: "Budget Variance", path: "" },
+        ],
     },
     {
         title: "Marketing",
+        path: "/dashboard/marketing",
         icon: (
             <svg
                 width="20"
@@ -138,10 +144,10 @@ const menuItems = [
                 />
             </svg>
         ),
-        path: "/dashboard/marketing",
     },
     {
         title: "Bench Marking",
+        path: "/dashboard",
         icon: (
             <svg
                 width="20"
@@ -179,10 +185,10 @@ const menuItems = [
                 </defs>
             </svg>
         ),
-        path: "/notifications",
     },
     {
         title: "Unit Renovation",
+        path: "/dashboard",
         icon: (
             <svg
                 width="20"
@@ -216,10 +222,10 @@ const menuItems = [
                 </defs>
             </svg>
         ),
-        path: "/notifications",
     },
     {
         title: "Capital Tracker",
+        path: "/dashboard",
         icon: (
             <svg
                 width="20"
@@ -243,10 +249,10 @@ const menuItems = [
                 </defs>
             </svg>
         ),
-        path: "/notifications",
     },
     {
         title: "Reporting",
+        path: "/dashboard",
         icon: (
             <svg
                 width="20"
@@ -261,10 +267,10 @@ const menuItems = [
                 />
             </svg>
         ),
-        path: "/settings",
     },
     {
         title: "Rent Roll Summary",
+        path: "/dashboard",
         icon: (
             <svg
                 width="20"
@@ -279,7 +285,6 @@ const menuItems = [
                 />
             </svg>
         ),
-        path: "/settings",
     },
 ];
 
