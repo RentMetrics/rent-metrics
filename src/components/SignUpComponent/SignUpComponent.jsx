@@ -40,12 +40,13 @@ export default function SignUpComponent() {
             });
 
             if (signUpResponse.status === "complete") {
-                navigate("/dashboard");
+                navigate("/dashboard/property-summary/");
                 return;
             }
 
             await signUp.prepareEmailAddressVerification({
-                redirectUrl: window.location.origin + "/dashboard",
+                redirectUrl:
+                    window.location.origin + "/dashboard/property-summary/",
             });
             navigate("/verify-email");
         } catch (err) {
@@ -71,8 +72,8 @@ export default function SignUpComponent() {
 
             await signUp.authenticateWithRedirect({
                 strategy,
-                redirectUrl: `${window.location.origin}/dashboard/property-summary`,
-                redirectUrlComplete: `${window.location.origin}/dashboard`,
+                redirectUrl: `${window.location.origin}/dashboard/property-summary/`,
+                redirectUrlComplete: `${window.location.origin}/dashboard/property-summary/`,
             });
             // The redirect will happen automatically, so no need for further code here
         } catch (err) {
@@ -148,7 +149,6 @@ export default function SignUpComponent() {
                                         onChange={(e) =>
                                             setLastName(e.target.value)
                                         }
-                                        required
                                     />
                                 </div>
                             </div>

@@ -11,7 +11,7 @@ export default function PropertySummary() {
                         Property Summary
                     </h2>
                     <Link
-                        to="/add-new-properties"
+                        to="/dashboard/add-new-properties"
                         className="text-base px-[18px] py-[9px] bg-main rounded-lg text-white font-black transition-colors duration-200 hover:bg-main-shade hover:text-main cursor-pointer inline-flex items-center gap-[10px] group col-auto"
                     >
                         <svg

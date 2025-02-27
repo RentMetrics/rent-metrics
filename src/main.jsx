@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
     <StrictMode>
         <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
             <App />
-        </ClerkProvider>{" "}
+        </ClerkProvider>
         {/* No need to wrap in <BrowserRouter> */}
     </StrictMode>
 );

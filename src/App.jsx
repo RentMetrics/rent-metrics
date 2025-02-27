@@ -18,9 +18,10 @@ import PropertySummary from "./pages/PropertySummary/PropertySummary";
 import RequestDemo from "./pages/RequestDemo/RequestDemo";
 // import SignIn from "./pages/SignIn/SignIn";
 // import SignUp from "./pages/SignUp/SignUp";
-import SignInComponent from "./components/SignInComponent/SignInComponent";
-import SignUpComponent from "./components/SignUpComponent/SignUpComponent";
+import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
+import SignInPage from "./pages/SignInPage/SignInPage";
+import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import Valuation from "./pages/Valuation/Valuation";
 import Welcome from "./pages/Welcome/Welcome";
@@ -31,7 +32,7 @@ const ProtectedRoute = ({ children }) => {
         <>
             <SignedIn>{children}</SignedIn>
             <SignedOut>
-                <Navigate to="/sign-in" replace />
+                <Navigate to="/welcome" replace />
             </SignedOut>
         </>
     );
@@ -50,7 +51,7 @@ const OAuthCallback = () => {
 const router = createBrowserRouter([
     // Public routes
     {
-        path: "/",
+        path: "/welcome",
         element: (
             <SignedOut>
                 <Welcome />
@@ -61,7 +62,7 @@ const router = createBrowserRouter([
         path: "/sign-in",
         element: (
             <SignedOut>
-                <SignInComponent />
+                <SignInPage />
             </SignedOut>
         ),
     },
@@ -69,7 +70,8 @@ const router = createBrowserRouter([
         path: "/sign-up",
         element: (
             <SignedOut>
-                <SignUpComponent />
+                {/* <SignUpComponent /> */}
+                <SignUpPage />
             </SignedOut>
         ),
     },
@@ -99,21 +101,35 @@ const router = createBrowserRouter([
     },
 
     // ADD THIS ROUTE - Critical for OAuth callbacks
-    {
-        path: "/sso-callback",
-        element: <OAuthCallback />,
-    },
+    // {
+    //     path: "/sso-callback",
+    //     element: <OAuthCallback />,
+    // },
 
     {
-        path: "/dashboard/properties/",
+        path: "/",
         element: (
             <ProtectedRoute>
                 <LoadPropertyLayout />
             </ProtectedRoute>
         ),
         children: [
-            { path: "", element: <NoPropertiesFound /> },
-            { path: "add-new-properties", element: <AddNewProperty /> },
+            {
+                path: "dashboard/properties/",
+                element: (
+                    <ProtectedRoute>
+                        <NoPropertiesFound />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "dashboard/add-new-properties",
+                element: (
+                    <ProtectedRoute>
+                        <AddNewProperty />
+                    </ProtectedRoute>
+                ),
+            },
         ],
     },
 
@@ -132,6 +148,7 @@ const router = createBrowserRouter([
             { path: "asset-intelligence", element: <AssetIntelligence /> },
             { path: "financial/overview", element: <FinancialOverview /> },
             { path: "operations/occupancy", element: <Occupancy /> },
+            { path: "operations/lease-trade-out", element: <LeaseTradeOut /> },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
         ],
     },
