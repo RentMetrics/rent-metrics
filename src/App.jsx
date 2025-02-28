@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import {
     createBrowserRouter,
@@ -18,13 +19,16 @@ import PropertySummary from "./pages/PropertySummary/PropertySummary";
 import RequestDemo from "./pages/RequestDemo/RequestDemo";
 // import SignIn from "./pages/SignIn/SignIn";
 // import SignUp from "./pages/SignUp/SignUp";
+import AverageEffectiveRent from "./pages/AverageEffectiveRent/AverageEffectiveRent";
 import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import Statement from "./pages/Statement/Statement";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import Valuation from "./pages/Valuation/Valuation";
 import Welcome from "./pages/Welcome/Welcome";
+import BudgetVariance from "./pages/BudgetVariance/BudgetVariance";
 
 // **Protected Route Component**
 const ProtectedRoute = ({ children }) => {
@@ -39,14 +43,14 @@ const ProtectedRoute = ({ children }) => {
 };
 
 // OAuth Callback Component
-const OAuthCallback = () => {
-    // This component can be empty - Clerk will handle the redirect
-    return (
-        <div className="grid place-items-center h-screen">
-            Processing authentication...
-        </div>
-    );
-};
+// const OAuthCallback = () => {
+//     // This component can be empty - Clerk will handle the redirect
+//     return (
+//         <div className="grid place-items-center h-screen">
+//             Processing authentication...
+//         </div>
+//     );
+// };
 
 const router = createBrowserRouter([
     // Public routes
@@ -147,8 +151,14 @@ const router = createBrowserRouter([
             { path: "valuation", element: <Valuation /> },
             { path: "asset-intelligence", element: <AssetIntelligence /> },
             { path: "financial/overview", element: <FinancialOverview /> },
+            { path: "financial/statement", element: <Statement /> },
+            { path: "financial/budget-variance", element: <BudgetVariance /> },
             { path: "operations/occupancy", element: <Occupancy /> },
             { path: "operations/lease-trade-out", element: <LeaseTradeOut /> },
+            {
+                path: "operations/average-effective-rent",
+                element: <AverageEffectiveRent />,
+            },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
         ],
     },

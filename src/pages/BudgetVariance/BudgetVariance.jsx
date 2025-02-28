@@ -1,23 +1,19 @@
 import { Link } from "react-router-dom";
+import BudgetVarianceDataTable from "../../components/BudgetVarianceDataTable/BudgetVarianceDataTable";
 
-// Icons import
-// import AddNote from "../../components/AddNote/AddNote";
-import AddNote from "../../components/AddNote/AddNote";
-import AIRecommendations from "../../components/AIRecommendations/AIRecommendations";
-import ApplicationConversionMonthChart from "../../components/Charts/ApplicationConversionMonthChart/ApplicationConversionMonthChart";
-
-export default function AssetIntelligence() {
+export default function BudgetVariance() {
     return (
         <section className="flex-1 p-8 bg-dark-10 min-h-[calc(100%-70px)] h-full overflow-y-auto py-20 relative z-0">
             {/* Heading & Button */}
             <div className="flex gap-6 justify-between items-center mb-[34px] pt-8">
                 <h2 className="text-[28px] font-bold text-dark-1 leading-[1.35]">
-                    Asset Intelligence
+                    Budget Variance
                 </h2>
+
                 <div className="flex gap-2.5">
-                    {/* Export Button */}
+                    {/* Edit Button */}
                     <Link
-                        to="/"
+                        to=""
                         className="text-base px-[18px] py-[9px] bg-main rounded-lg text-white font-black transition-colors duration-200 hover:bg-main-shade hover:text-main cursor-pointer inline-flex items-center gap-2 group col-auto"
                     >
                         <svg
@@ -37,7 +33,7 @@ export default function AssetIntelligence() {
                     </Link>
                     {/* Share Button */}
                     <Link
-                        to="/"
+                        to=""
                         className="text-base px-[17px] py-2 border border-dark-2 bg-transparent rounded-lg text-dark-2 font-black transition-colors duration-200 hover:bg-dark-2 hover:text-white cursor-pointer inline-flex items-center gap-2 group col-auto"
                     >
                         <svg
@@ -57,13 +53,9 @@ export default function AssetIntelligence() {
                     </Link>
                 </div>
             </div>
-            <div className="flex flex-col gap-6">
-                <ApplicationConversionMonthChart title="Application Cohort Conversion by Month" />
-                <div className="grid grid-cols-12 gap-6">
-                    <AIRecommendations />
 
-                    <AddNote />
-                </div>
+            <div>
+                <BudgetVarianceDataTable />
             </div>
         </section>
     );

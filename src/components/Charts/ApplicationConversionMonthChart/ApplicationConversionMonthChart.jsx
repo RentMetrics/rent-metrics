@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
     CartesianGrid,
     Legend,
@@ -95,11 +96,11 @@ const data = [
     },
 ];
 
-export default function ApplicationConversionMonthChart() {
+export default function ApplicationConversionMonthChart({title}) {
     return (
         <div className="bg-white p-6 rounded-lg col-span-1">
             <h2 className="text-lg font-bold text-dark-1 leading-[1.4] mb-6">
-                Application Cohort Conversion by Month
+                {title}
             </h2>
 
             <div className="w-full h-[300px] bg-white">

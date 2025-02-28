@@ -91,8 +91,8 @@ const menuItems = [
         ),
         submenu: [
             { title: "Overview ", path: "/dashboard/financial/overview" },
-            { title: "Statement", path: "/statement" },
-            { title: "Budget Variance", path: "/budget-variance" },
+            { title: "Statement", path: "/dashboard/financial/statement" },
+            { title: "Budget Variance", path: "/dashboard/financial/budget-variance" },
         ],
     },
     {
@@ -123,8 +123,14 @@ const menuItems = [
         ),
         submenu: [
             { title: "Occupancy ", path: "/dashboard/operations/occupancy" },
-            { title: "Average Effective Rent", path: "" },
-            { title: "Lease-Trade Out", path: "/dashboard/operations/lease-trade-out" },
+            {
+                title: "Average Effective Rent",
+                path: "/dashboard/operations/average-effective-rent",
+            },
+            {
+                title: "Lease-Trade Out",
+                path: "/dashboard/operations/lease-trade-out",
+            },
             { title: "Lease-Up Tracker", path: "" },
             { title: "Delinquency", path: "" },
         ],
