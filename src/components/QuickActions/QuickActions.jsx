@@ -7,32 +7,32 @@ export default function QuickActions() {
                 Quick Actions
             </h2>
 
-            <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-4 gap-2">
                 {/* Button */}
                 <Link
                     to=""
-                    className="flex justify-center py-[14px] px-6 rounded-lg bg-main text-white text-base font-black h-13 transition-colors duration-200 hover:bg-main-shade hover:text-main"
+                    className="col-span-1 flex justify-center items-center py-2 px-3 rounded-lg bg-main text-white text-xs font-black transition-colors duration-200 hover:bg-main-shade hover:text-main"
                 >
                     Export Current Data
                 </Link>
                 {/* Button */}
                 <Link
                     to=""
-                    className="flex justify-center py-[14px] px-6 rounded-lg bg-main-shade text-main text-base font-black h-13 transition-colors duration-200 hover:bg-main hover:text-white"
+                    className="col-span-1 flex justify-center items-center py-2 px-3 rounded-lg bg-main-shade text-main text-xs font-black transition-colors duration-200 hover:bg-main hover:text-white"
                 >
                     Adjust Budget
                 </Link>
                 {/* Button */}
                 <Link
                     to=""
-                    className="flex justify-center py-[14px] px-6 rounded-lg bg-main-shade-2 text-main-2 text-base font-black h-13 transition-colors duration-200 hover:bg-main-2 hover:text-white"
+                    className="col-span-1 flex justify-center items-center py-2 px-3 rounded-lg bg-main-shade-2 text-main-2 text-xs font-black transition-colors duration-200 hover:bg-main-2 hover:text-white"
                 >
                     Set Alerts
                 </Link>
                 {/* Button */}
                 <Link
                     to=""
-                    className="flex justify-center py-3 px-5.5 rounded-lg border-2 border-main bg-transparent text-main text-base font-black h-13 transition-colors duration-200 hover:bg-main hover:text-white "
+                    className="col-span-1 flex justify-center items-center py-2 px-3 rounded-lg border-2 border-main bg-transparent text-main text-xs font-black transition-colors duration-200 hover:bg-main hover:text-white "
                 >
                     Generate Report
                 </Link>

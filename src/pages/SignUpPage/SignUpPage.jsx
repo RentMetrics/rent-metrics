@@ -87,7 +87,7 @@ export default function SignUpPage() {
             await setActive({ session: completeSignUp.createdSessionId });
 
             // Redirect to dashboard or home page
-            navigate("/dashboard/property-summary");
+            navigate("/");
         } catch (err) {
             console.error("Error during verification:", err);
             setError(err.message || "Error verifying email. Please try again.");
@@ -105,7 +105,7 @@ export default function SignUpPage() {
             await signUp.authenticateWithRedirect({
                 strategy,
                 redirectUrl: "/sso-callback",
-                redirectUrlComplete: "/dashboard/property-summary",
+                redirectUrlComplete: "/",
             });
         } catch (err) {
             console.error(`Error during ${strategy} sign up:`, err);

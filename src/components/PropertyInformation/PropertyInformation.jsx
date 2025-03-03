@@ -272,7 +272,7 @@ export default function PropertyInformation() {
                 {/* Button group */}
                 <div className="flex justify-end gap-5 mt-8">
                     <Link
-                        to="/dashboard/properties"
+                        to="/"
                         className="flex justify-center py-[14px] px-6 rounded-lg bg-danger text-white text-base font-black transition-colors duration-200 hover:bg-danger/15 hover:text-danger"
                     >
                         Cancel

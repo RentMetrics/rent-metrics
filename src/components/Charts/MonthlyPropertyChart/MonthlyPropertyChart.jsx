@@ -68,9 +68,9 @@ export default function MonthlyPropertyChart() {
                     <Line
                         type="monotone"
                         dataKey="revenue"
-                        stroke="#10A05D"
+                        stroke="#2970CC"
                         strokeWidth={2}
-                        dot={{ fill: "#10A05D", r: 2.5 }}
+                        dot={{ fill: "#2970CC", r: 2.5 }}
                         tick={{
                             fontSize: 10,
                             fontWeight: 600,
@@ -80,9 +80,9 @@ export default function MonthlyPropertyChart() {
                     <Line
                         type="monotone"
                         dataKey="sales"
-                        stroke="#FAB649"
+                        stroke="#30D287"
                         strokeWidth={2}
-                        dot={{ fill: "#FAB649", r: 2.5 }}
+                        dot={{ fill: "#30D287", r: 2.5 }}
                     />
                 </LineChart>
             </ResponsiveContainer>

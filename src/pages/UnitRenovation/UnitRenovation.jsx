@@ -1,23 +1,52 @@
-import { Link } from "react-router-dom";
-import StatusCard from "../../components/StatusCard/StatusCard";
+import { useState } from "react";
+import { Link } from "react-router-dom"; // Ensure Link is imported
+import PropertyDocuments from "../../components/PropertyDocuments/PropertyDocuments";
+import Returns from "../../components/Returns/Returns";
+import Vacant from "../../components/Vacant/Vacant";
+import Valuation from "../../components/Valuation/Valuation";
 
-import expenseTracking from "../../assets/images/expense-tracking-icon.svg";
-import NoiTracker from "../../assets/images/noi-tracker-icon.svg";
-import revenueOverview from "../../assets/images/revenue-overview-icon.svg";
-import BudgetProjectionsChart from "../../components/Charts/BudgetProjectionsChart/BudgetProjectionsChart";
-import CurrentMonthActualChart from "../../components/Charts/CurrentMonthActualChart/CurrentMonthActualChart";
-import DailyFinancialTrackerChart from "../../components/Charts/DailyFinancialTrackerChart/DailyFinancialTrackerChart";
-import InsightsRecommendations from "../../components/InsightsRecommendations/InsightsRecommendations";
-import QuickActions from "../../components/QuickActions/QuickActions";
-import StatusCardKPI from "../../components/StatusCardKPI/StatusCardKPI";
+const Tabs = () => {
+    const [activeTab, setActiveTab] = useState(0);
 
-export default function FinancialOverview() {
+    const tabs = [
+        { title: "Vacant (5)", content: <Vacant /> },
+        { title: "Occupied NTV (22)", content: <Valuation /> },
+        { title: "Occupied Exp. in 30 Days (13)", content: <Returns /> },
+        { title: "Admin/Down (0)", content: <PropertyDocuments /> },
+    ];
+
+    return (
+        <div className="w-full">
+            {/* Tabs Header */}
+            <div className="bg-white p-[5px] rounded-md inline-flex mb-8 gap-1">
+                {tabs.map((tab, index) => (
+                    <button
+                        key={index}
+                        onClick={() => setActiveTab(index)}
+                        className={`text-sm py-[13px] px-7 text-dark-1 font-bold leading-[1.4] cursor-pointer transition-colors duration-200 rounded-md outline-none focus-visible:outline-none focus-visible:border-none hover:bg-main hover:text-white ${
+                            activeTab === index
+                                ? "bg-main text-white"
+                                : "text-dark-1"
+                        }`}
+                    >
+                        {tab.title}
+                    </button>
+                ))}
+            </div>
+
+            {/* Tabs Content */}
+            <div>{tabs[activeTab].content}</div>
+        </div>
+    );
+};
+
+export default function UnitRenovation() {
     return (
         <section className="flex-1 p-8 bg-dark-10 min-h-[calc(100%-70px)] h-full overflow-y-auto py-20 relative z-0">
             {/* Heading & Button */}
             <div className="flex gap-6 justify-between items-center mb-[34px] pt-8">
                 <h2 className="text-[28px] font-bold text-dark-1 leading-[1.35]">
-                    Overview
+                    Unit Renovation
                 </h2>
                 <div className="flex gap-2.5">
                     <Link
@@ -61,49 +90,8 @@ export default function FinancialOverview() {
                 </div>
             </div>
 
-            <div className="grid gap-6">
-                <div className="col-span-full">
-                    <div className="grid grid-cols-5 justify-between gap-6 mb-6">
-                        <StatusCard
-                            title="Revenue Overview"
-                            icon={revenueOverview}
-                            number="$85,420"
-                            status="Last month"
-                            statusCode="12.5%"
-                            statusColor="#73EAB2"
-                        />
-                        <StatusCard
-                            title="Expense Tracking"
-                            icon={expenseTracking}
-                            number="$42,150"
-                            status="Last month"
-                            statusCode="3.2%"
-                            statusColor="#68C8F8"
-                        />
-                        <StatusCard
-                            title="NOI Tracker"
-                            icon={NoiTracker}
-                            number="500"
-                            status="Convert"
-                            statusCode="12%"
-                            statusColor="#FFC362"
-                        />
-                        <StatusCardKPI />
-                        <StatusCardKPI />
-                    </div>
-                </div>
-                <div className="grid grid-cols-2 gap-6">
-                    <CurrentMonthActualChart />
-                    <BudgetProjectionsChart />
-                </div>
-                <div className="grid grid-cols-1 gap-6">
-                    <DailyFinancialTrackerChart />
-                </div>
-                <div className="grid grid-cols-12 gap-6">
-                    <InsightsRecommendations />
-                    <QuickActions />
-                </div>
-            </div>
+            {/* Tabs Component */}
+            <Tabs />
         </section>
     );
 }

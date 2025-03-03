@@ -7,9 +7,8 @@ export default function Header() {
         <header className="bg-white py-[30px] px-[30px]">
             <div className="container flex justify-between gap-6 mx-auto">
                 {/* Logo */}
-                <Link to="/dashboard/property-summary/">
-                    <img src={logo} alt="Logo" className="max-w-full" />
-                </Link>
+
+                <img src={logo} alt="Logo" className="max-w-full" />
 
                 {/* Back to Dashboard Button */}
                 <Link

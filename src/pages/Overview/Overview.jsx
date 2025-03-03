@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Ensure Link is imported
 import OverviewTab from "../../components/OverviewTab/OverviewTab";
-import PropertyDocuments from "../../components/PropertyDocuments/PropertyDocuments";
 import Returns from "../../components/Returns/Returns";
 import Valuation from "../../components/Valuation/Valuation";
 
@@ -12,7 +11,6 @@ const Tabs = () => {
         { title: "Overview", content: <OverviewTab /> },
         { title: "Valuation", content: <Valuation /> },
         { title: "Returns", content: <Returns /> },
-        { title: "Documents", content: <PropertyDocuments /> },
     ];
 
     return (

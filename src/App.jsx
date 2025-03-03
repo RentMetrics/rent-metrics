@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import NotFound from "./components/NotFound/NotFound";
 import DashboardLayout from "./layouts/DashboardLayout/DashboardLayout";
-import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout";
 import AddNewProperty from "./pages/AddNewProperty/AddNewProperty";
 import AssetIntelligence from "./pages/AssetIntelligence/AssetIntelligence";
 import FinancialOverview from "./pages/FinancialOverview/FinancialOverview";
@@ -19,16 +18,18 @@ import PropertySummary from "./pages/PropertySummary/PropertySummary";
 import RequestDemo from "./pages/RequestDemo/RequestDemo";
 // import SignIn from "./pages/SignIn/SignIn";
 // import SignUp from "./pages/SignUp/SignUp";
+import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout";
 import AverageEffectiveRent from "./pages/AverageEffectiveRent/AverageEffectiveRent";
+import BudgetVariance from "./pages/BudgetVariance/BudgetVariance";
 import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import Statement from "./pages/Statement/Statement";
 import ThankYou from "./pages/ThankYou/ThankYou";
+import UnitRenovation from "./pages/UnitRenovation/UnitRenovation";
 import Valuation from "./pages/Valuation/Valuation";
 import Welcome from "./pages/Welcome/Welcome";
-import BudgetVariance from "./pages/BudgetVariance/BudgetVariance";
 
 // **Protected Route Component**
 const ProtectedRoute = ({ children }) => {
@@ -115,11 +116,12 @@ const router = createBrowserRouter([
         element: (
             <ProtectedRoute>
                 <LoadPropertyLayout />
+                {/* <NoPropertiesFound /> */}
             </ProtectedRoute>
         ),
         children: [
             {
-                path: "dashboard/properties/",
+                path: "",
                 element: (
                     <ProtectedRoute>
                         <NoPropertiesFound />
@@ -127,7 +129,7 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "dashboard/add-new-properties",
+                path: "add-new-properties",
                 element: (
                     <ProtectedRoute>
                         <AddNewProperty />
@@ -158,6 +160,16 @@ const router = createBrowserRouter([
             {
                 path: "operations/average-effective-rent",
                 element: <AverageEffectiveRent />,
+            },
+            { path: "unit-renovation/analytics", element: <UnitRenovation /> },
+            {
+                path: "unit-renovation/project-date",
+                element: <UnitRenovation />,
+            },
+            { path: "unit-renovation/update-due", element: <UnitRenovation /> },
+            {
+                path: "unit-renovation/reno-opportunities",
+                element: <UnitRenovation />,
             },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
         ],
