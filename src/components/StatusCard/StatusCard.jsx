@@ -12,7 +12,11 @@ export default function StatusCard({
     return (
         <div className="bg-white rounded-lg p-4 relative col-span-1 h-full">
             {/* Drag Icon */}
-            <img src={dragIcon} alt="Drag Icon" className="absolute right-3 top-3" />
+            <img
+                src={dragIcon}
+                alt="Drag Icon"
+                className="absolute right-3 top-3"
+            />
 
             {/* Title and Icon */}
             <div className="flex gap-3 items-center mb-5.5">
@@ -28,7 +32,7 @@ export default function StatusCard({
 
             {/* Status Badge */}
             {status ? (
-                <span className="text-sm text-dark-2 font-bold leading-[1.4] border border-dark-4 rounded-full pl-12 pe-2 py-0.5 relative">
+                <span className="text-sm text-dark-2 font-bold leading-[1.4] border border-dark-4 rounded-full pl-14 pe-2 py-0.5 relative">
                     <span
                         className="px-2 py-0.5 rounded-full text-dark-1 font-bold absolute left-[-1px] top-[-1px] h-[calc(100%+2px)]"
                         style={{ backgroundColor: statusColor || "#73EAB2" }}
