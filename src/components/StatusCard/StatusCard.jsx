@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import dragIcon from "../../assets/images/drag-icon.svg";
+import tooltipIcon from "../../assets/images/title-tooltip-icon.svg";
 import totalRevenue from "../../assets/images/total-revenue-icon.svg";
 
 export default function StatusCard({
@@ -8,6 +10,9 @@ export default function StatusCard({
     statusCode,
     status,
     number,
+    secondStatusColor,
+    secondStatusCode,
+    secondStatus,
 }) {
     return (
         <div className="bg-white rounded-lg p-4 relative col-span-1 h-full">
@@ -25,22 +30,47 @@ export default function StatusCard({
                     alt="Icon"
                     className="max-w-full"
                 />
-                <h6 className="text-sm text-dark-1 font-bold leading-[1.4]">
+                <h6 className="text-sm text-dark-1 font-bold leading-[1.4] flex gap-3 items-center">
                     {title || "Total Revenue"}
+                    <button className="cursor-pointer">
+                        <img
+                            src={tooltipIcon}
+                            alt="Icon"
+                            className="max-w-full"
+                        />
+                    </button>
                 </h6>
             </div>
 
             {/* Status Badge */}
             {status ? (
-                <span className="text-sm text-dark-2 font-bold leading-[1.4] border border-dark-4 rounded-full pl-14 pe-2 py-0.5 relative">
-                    <span
-                        className="px-2 py-0.5 rounded-full text-dark-1 font-bold absolute left-[-1px] top-[-1px] h-[calc(100%+2px)]"
-                        style={{ backgroundColor: statusColor || "#73EAB2" }}
-                    >
-                        {statusCode || "12%"}
+                <div className="flex flex-col items-start gap-3">
+                    <span className="text-sm text-dark-2 font-bold leading-[1.4] border border-dark-4 rounded-full pl-16 pe-2 py-0.5 relative">
+                        <span
+                            className="px-2 py-0.5 rounded-full text-dark-1 font-bold absolute left-[-1px] top-[-1px] min-w-14 inline-flex items-center text-center h-[calc(100%+2px)]"
+                            style={{
+                                backgroundColor: statusColor || "#73EAB2",
+                            }}
+                        >
+                            {statusCode || "12%"}
+                        </span>
+                        {status || "Last year"}
                     </span>
-                    {status || "Last year"}
-                </span>
+                    {secondStatusCode && (
+                        <span className="text-sm text-dark-2 font-bold leading-[1.4] border border-dark-4 rounded-full pl-18 pe-2 py-0.5 relative">
+                            <span
+                                className="px-2 py-0.5 rounded-full text-dark-1 font-bold absolute left-[-1px] top-[-1px] min-w-14 inline-flex items-center text-center h-[calc(100%+2px)]"
+                                style={{
+                                    backgroundColor:
+                                        secondStatusColor || "#73EAB2",
+                                }}
+                            >
+                                {secondStatusCode || "12%"}
+                            </span>
+                            {secondStatus || "Last year"}
+                        </span>
+                    )}
+                </div>
             ) : (
                 <span className="opacity-0">&nbsp;</span>
             )}

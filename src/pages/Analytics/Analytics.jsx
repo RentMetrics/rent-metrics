@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import AvgDaysVacant from "../../components/AvgDaysVacant/AvgDaysVacant";
+import Financial from "../../components/Financial/Financial";
 import ProjectProgressOverview from "../../components/ProjectProgressOverview/ProjectProgressOverview";
 import Schedules from "../../components/Schedules/Schedules";
 
@@ -54,6 +56,8 @@ export default function Analytics() {
 
             <ProjectProgressOverview />
             <Schedules />
+            <AvgDaysVacant />
+            <Financial />
         </section>
     );
 }

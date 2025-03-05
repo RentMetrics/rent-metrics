@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import CumulativeUnitCompletion from "../Charts/CumulativeUnitCompletion/CumulativeUnitCompletion";
+
 const MultiLevelProgressBar = ({ completed, projected, total }) => {
     return (
         <div className="w-full relative">
@@ -70,30 +72,34 @@ const MultiLevelProgressBar = ({ completed, projected, total }) => {
 
 export default function ProjectProgressOverview() {
     return (
-        <div className="max-w-full mx-auto bg-white p-6 rounded-lg col-span-1">
-            <h2 className="text-lg font-bold text-dark-1 leading-[1.4] mb-14">
-                Project Progress Overview
-            </h2>
-            <div className="mb-18 flex">
-                <p className="text-sm text-dark-2 font-bold min-w-20">
-                    # Units
-                </p>
-                <MultiLevelProgressBar
-                    completed={161}
-                    projected={292}
-                    total={378}
-                />
+        <>
+            <div className="max-w-full mx-auto bg-white p-6 rounded-lg col-span-1 mb-6">
+                <h2 className="text-lg font-bold text-dark-1 leading-[1.4] mb-14">
+                    Project Progress Overview
+                </h2>
+                <div className="mb-18 flex">
+                    <p className="text-sm text-dark-2 font-bold min-w-20">
+                        # Units
+                    </p>
+                    <MultiLevelProgressBar
+                        completed={161}
+                        projected={292}
+                        total={378}
+                    />
+                </div>
+                <div className="flex">
+                    <p className="text-sm text-dark-2 font-bold min-w-20">
+                        $ Amount
+                    </p>
+                    <MultiLevelProgressBar
+                        completed={2.68}
+                        projected={3.79}
+                        total={4.86}
+                    />
+                </div>
             </div>
-            <div className="flex">
-                <p className="text-sm text-dark-2 font-bold min-w-20">
-                    $ Amount
-                </p>
-                <MultiLevelProgressBar
-                    completed={2.68}
-                    projected={3.79}
-                    total={4.86}
-                />
-            </div>
-        </div>
+            
+            <CumulativeUnitCompletion />
+        </>
     );
 }
