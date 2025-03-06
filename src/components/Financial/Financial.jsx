@@ -1,3 +1,4 @@
+import { Checkbox, SelectPicker } from "rsuite";
 import budgetedIcon from "../../assets/images/budgeted-icon.svg";
 import costIcon from "../../assets/images/cost-icon.svg";
 import costVariance from "../../assets/images/cost-variance-icon.svg";
@@ -6,12 +7,42 @@ import projectROI from "../../assets/images/project-ROI-icon.svg";
 import unRenoMktROI from "../../assets/images/un-reno-mkt-ROI-icon.svg";
 import StatusCard from "../StatusCard/StatusCard";
 
+const data = [
+    "Actual",
+    "Bryan",
+    "Linda",
+    "Nancy",
+    "Lloyd",
+    "Alice",
+    "Julia",
+    "Albert",
+].map((item) => ({ label: item, value: item }));
+
 export default function Financial() {
     return (
         <div className=" mt-8">
-            <h2 className="text-lg font-bold text-dark-1 leading-[1.4] mb-6">
-                Financials
-            </h2>
+            <div className="mb-6 flex justify-between items-center">
+                <h2 className="text-lg font-bold text-dark-1 leading-[1.4] ">
+                    Financials
+                </h2>
+                <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
+                        <h6 className="text-dark-2 text-sm font-bold leading-[1.4]">
+                            Project Period:
+                        </h6>
+                        <SelectPicker
+                            data={data}
+                            appearance="subtle"
+                            placeholder="Actual"
+                            className="w-26"
+                            searchable={false}
+                        />
+                    </div>
+                    <div className="">
+                        <Checkbox className="text-dark-2 font-bold text-sm">Include Vacancy Cost</Checkbox>
+                    </div>
+                </div>
+            </div>
 
             <div className="col-span-full">
                 <div className="grid grid-cols-3 justify-between gap-6 mb-6">

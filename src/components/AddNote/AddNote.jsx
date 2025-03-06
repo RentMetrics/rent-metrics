@@ -1,19 +1,24 @@
-const operations = [
-    { name: "Operations" },
-    { name: "Arlene Mccoy" },
-    { name: "Devon Webb" },
-    { name: "Tom Cook" },
-    { name: "Tanya Fox" },
-    { name: "Hellen Schmidt" },
-];
-const lavel = [
-    { name: "Low" },
-    { name: "Arlene Mccoy" },
-    { name: "Devon Webb" },
-    { name: "Tom Cook" },
-    { name: "Tanya Fox" },
-    { name: "Hellen Schmidt" },
-];
+import { Form, SelectPicker } from "rsuite";
+
+const categoryData = [
+    "Eugenia",
+    "Bryan",
+    "Linda",
+    "Nancy",
+    "Lloyd",
+    "Alice",
+    "Julia",
+    "Albert",
+].map((item) => ({ label: item, value: item }));
+
+const priorityLevels = [
+    "Low",
+    "Arlene Mccoy",
+    "Devon Webb",
+    "Tom Cook",
+    "Tanya Fox",
+    "Hellen Schmidt",
+].map((name) => ({ label: name, value: name }));
 
 export default function AddNote() {
     const handleSubmit = (e) => {
@@ -60,6 +65,51 @@ export default function AddNote() {
                     Add Note
                 </button>
             </form> */}
+
+            <Form onSubmit={handleSubmit}>
+                <div className="flex gap-4">
+                    <Form.Group controlId="category" className="w-full">
+                        <Form.ControlLabel className="text-base text-dark-1 font-bold leading-[1.4] mb-3">
+                            Category
+                        </Form.ControlLabel>
+                        <SelectPicker
+                            data={categoryData}
+                            searchable={false}
+                            menuClassName="add-note-select"
+                            className="w-full border-0 min-h-[52px] bg-dark-7 rounded-lg"
+                        />
+                    </Form.Group>
+
+                    <Form.Group controlId="priority" className="w-full">
+                        <Form.ControlLabel className="text-base text-dark-1 font-bold leading-[1.4] mb-3">
+                            Priority
+                        </Form.ControlLabel>
+                        <SelectPicker
+                            data={priorityLevels}
+                            searchable={false}
+                            menuClassName="add-note-select"
+                            className="w-full border-0 min-h-[52px] bg-dark-7 rounded-lg"
+                        />
+                    </Form.Group>
+                </div>
+
+                <Form.Group controlId="textarea" className="w-full">
+                    <Form.ControlLabel className="text-base text-dark-1 font-bold leading-[1.4] mb-3">
+                        Note
+                    </Form.ControlLabel>
+                    <textarea
+                        name="note"
+                        className="bg-dark-7 rounded-lg w-full p-4 text-sm placeholder:text-dark-2/40 outline-none resize-none min-h-[102px] min-w-full border-none"
+                        placeholder="Enter your note here"
+                    />
+                </Form.Group>
+                <button
+                    type="submit"
+                    className="w-full text-base px-[18px] py-[9px] bg-main rounded-lg text-white font-black transition-colors duration-200 hover:bg-main-shade hover:text-main cursor-pointer inline-flex items-center gap-2 group col-auto text-center justify-center mt-0"
+                >
+                    Add Note
+                </button>
+            </Form>
         </div>
     );
 }

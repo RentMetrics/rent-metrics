@@ -172,6 +172,37 @@ button[data-headlessui-state="selected"]:focus-visible {
 }
 /* Scrollbar -end */
 
+/* Select box style */
+.rs-picker-select {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+}
+.rs-picker-select .rs-picker-toggle.rs-btn.rs-btn-default {
+    background: var(--color-dark-7) !important;
+    border-radius: 8px;
+    border: none;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    outline: none !important;
+}
+
+.add-note-select .rs-stack-item.rs-picker-toggle-indicator svg {
+    top: 15px !important;
+}
+
+.rs-picker-select input {
+    outline: none !important;
+}
+.rs-picker-toggle:focus-visible {
+    outline: 0px solid transparent !important;
+    outline: 0px solid transparent !important;
+}
+/* Select box style */
+
 /* Custom progress bar style */
 /* @layer utilities {
     .custom-progress {
