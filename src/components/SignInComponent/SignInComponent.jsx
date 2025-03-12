@@ -1,12 +1,16 @@
 import { SignIn } from "@clerk/clerk-react";
+import LandingPageHeader from "../LandingPageHeader/LandingPageHeader";
 // Logo
 
 export default function SignInComponent() {
     return (
-        <div className="grid place-items-center h-full min-h-svh login-signup-bg">
-            <div className="container mx-auto flex justify-center items-center my-16">
-                <SignIn />
+        <>
+            <LandingPageHeader />
+            <div className="grid place-items-center h-[calc(100%-111px)]  min-h-[calc(100svh-111px)] login-signup-bg">
+                <div className="container mx-auto flex justify-center items-center my-4">
+                    <SignIn />
+                </div>
             </div>
-        </div>
+        </>
     );
 }

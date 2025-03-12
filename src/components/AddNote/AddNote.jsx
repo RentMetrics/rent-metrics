@@ -68,7 +68,10 @@ export default function AddNote() {
 
             <Form onSubmit={handleSubmit}>
                 <div className="flex gap-4">
-                    <Form.Group controlId="category" className="w-full">
+                    <Form.Group
+                        controlId="category"
+                        className="w-full add-note-select-wrapper"
+                    >
                         <Form.ControlLabel className="text-base text-dark-1 font-bold leading-[1.4] mb-3">
                             Category
                         </Form.ControlLabel>
@@ -80,7 +83,10 @@ export default function AddNote() {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="priority" className="w-full">
+                    <Form.Group
+                        controlId="priority"
+                        className="w-full add-note-select-wrapper"
+                    >
                         <Form.ControlLabel className="text-base text-dark-1 font-bold leading-[1.4] mb-3">
                             Priority
                         </Form.ControlLabel>

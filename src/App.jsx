@@ -20,10 +20,12 @@ import RequestDemo from "./pages/RequestDemo/RequestDemo";
 // import SignUp from "./pages/SignUp/SignUp";
 import SignInComponent from "./components/SignInComponent/SignInComponent";
 import SignUpComponent from "./components/SignUpComponent/SignUpComponent";
+import HomeLayout from "./layouts/HomeLayout/HomeLayout";
 import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout";
 import Analytics from "./pages/Analytics/Analytics";
 import AverageEffectiveRent from "./pages/AverageEffectiveRent/AverageEffectiveRent";
 import BudgetVariance from "./pages/BudgetVariance/BudgetVariance";
+import Home from "./pages/Home/Home";
 import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
 import Statement from "./pages/Statement/Statement";
@@ -31,7 +33,6 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import UnitRenovation from "./pages/UnitRenovation/UnitRenovation";
 import UpdateDue from "./pages/UpdateDue/UpdateDue";
 import Valuation from "./pages/Valuation/Valuation";
-import Welcome from "./pages/Welcome/Welcome";
 
 // **Protected Route Component**
 const ProtectedRoute = ({ children }) => {
@@ -39,7 +40,7 @@ const ProtectedRoute = ({ children }) => {
         <>
             <SignedIn>{children}</SignedIn>
             <SignedOut>
-                <Navigate to="/welcome" replace />
+                <Navigate to="/home" replace />
             </SignedOut>
         </>
     );
@@ -58,13 +59,27 @@ const ProtectedRoute = ({ children }) => {
 const router = createBrowserRouter([
     // Public routes
     {
-        path: "/welcome",
+        path: "/home",
         element: (
             <SignedOut>
-                <Welcome />
+                <HomeLayout />
             </SignedOut>
         ),
     },
+
+    {
+        path: "/home",
+        element: (
+            <SignedOut>
+                <HomeLayout />
+            </SignedOut>
+        ),
+        children: [
+            { path: "", element: <Home /> },
+            { path: "home/solution", element: <Overview /> },
+        ],
+    },
+
     {
         path: "/sign-in",
         element: (

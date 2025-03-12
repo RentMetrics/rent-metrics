@@ -190,7 +190,7 @@ button[data-headlessui-state="selected"]:focus-visible {
     outline: none !important;
 }
 
-.add-note-select .rs-stack-item.rs-picker-toggle-indicator svg {
+.add-note-select-wrapper .rs-stack-item.rs-picker-toggle-indicator svg {
     top: 15px !important;
 }
 
@@ -203,22 +203,17 @@ button[data-headlessui-state="selected"]:focus-visible {
 }
 /* Select box style */
 
-/* Custom progress bar style */
-/* @layer utilities {
-    .custom-progress {
-        @apply appearance-none min-w-64 w-full h-4;
-    }
+/* Footer style -start */
+.footer-area {
+    background: url("../src/assets/images/footer-bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
 
-    .custom-progress::-webkit-progress-bar {
-        @apply bg-gray-200 rounded-md;
-    }
-
-    .custom-progress::-webkit-progress-value {
-        @apply bg-blue-500 rounded-md;
-    }
-
-    .custom-progress::-moz-progress-bar {
-        @apply bg-blue-500 rounded-md;
-    }
-} */
-/* Custom progress bar style */
+.footer-navigation li a::before {
+    background: url('data:image/svg+xml,<svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M-5.24537e-07 0L0 12L10 5.99677L-5.24537e-07 0Z" fill="%2345C7FF"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* Footer style -end */
