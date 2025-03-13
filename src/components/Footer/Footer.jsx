@@ -3,10 +3,10 @@ import footerLogo from "../../assets/images/logo-white.svg";
 
 export default function Footer() {
     return (
-        <footer className="footer-area pt-25">
+        <footer className="footer-area xl:pt-25 lg:pt-20 md:pt-14 pt-12">
             {/* Footer top */}
-            <div className="container mx-auto grid grid-cols-12 gap-6 pb-[118px]">
-                <div className="col-span-4">
+            <div className="container mx-auto px-4 sm:grid flex flex-col sm:grid-cols-12 grid-cols-1 lg:gap-6 gap-10 xl:pb-[118px] lg:pb-20 md:pb-14 sm:pb-10 pb-4">
+                <div className="lg:col-span-4 col-span-12 ">
                     <img
                         src={footerLogo}
                         alt="Footer logo"
@@ -14,18 +14,18 @@ export default function Footer() {
                     />
                 </div>
 
-                <div className="col-span-8">
-                    <div className="flex justify-between gap=6">
+                <div className="lg:col-span-8 sm:col-span-12">
+                    <div className="sm:grid flex flex-col sm:grid-cols-12 justify-between md:gap-6 gap-y-12 gap-x-8">
                         {/* Widget */}
-                        <div className="min-w-30">
+                        <div className="md:min-w-30 min-w-full xl:col-span-4 lg:col-span-3 md:col-span-3 sm:col-span-6">
                             <h5 className="text-white font-black uppercase text-sm mb-6">
                                 Navigation
                             </h5>
-                            <ul className="grid gap-4 footer-navigation ">
+                            <ul className="grid md:gap-4 sm:gap-3 gap-2 footer-navigation">
                                 <li>
                                     <Link
                                         to=""
-                                        className="text-sm text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
+                                        className="md:text-sm text-xs text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
                                     >
                                         Solution
                                     </Link>
@@ -33,7 +33,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         to=""
-                                        className="text-sm text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
+                                        className="md:text-sm text-xs text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
                                     >
                                         Company
                                     </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         to=""
-                                        className="text-sm text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
+                                        className="md:text-sm text-xs text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
                                     >
                                         Resources
                                     </Link>
@@ -49,7 +49,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         to=""
-                                        className="text-sm text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
+                                        className="md:text-sm text-xs text-dark-5 font-bold leading-[1.3] uppercase transition-all duration-300 hover:text-main-2 hover:ps-4.5 relative before:left-0 before:top-[calc(50%-5px)] before:w-0 before:h-2.5 before:content-[''] before:absolute hover:before:w-3 before:transition-all before:duration-300"
                                     >
                                         Products
                                     </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
                             </ul>
                         </div>
                         {/* Widget */}
-                        <div className="">
+                        <div className="xl:col-span-4 lg:col-span-4 md:col-span-4 sm:col-span-6">
                             <h5 className="text-white font-black uppercase text-sm mb-6">
                                 Contact Us
                             </h5>
@@ -119,15 +119,15 @@ export default function Footer() {
                             </ul>
                         </div>
                         {/* Widget */}
-                        <div className="">
-                            <h5 className="text-white font-black uppercase text-sm mb-6">
+                        <div className="xl:col-span-4 lg:col-span-5 md:col-span-5 col-span-12">
+                            <h5 className="text-white font-black uppercase text-sm mb-6 2xl:pl-20 lg:pl-6 md:pl-14 md:text-left text-center">
                                 Social
                             </h5>
-                            <div className="flex items-center justify-end gap-2.5">
+                            <div className="flex items-center md:justify-end justify-center gap-2.5">
                                 {/* Item */}
                                 <Link
                                     to=""
-                                    className="p-3 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
+                                    className="md:p-3 p-2.5 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
                                 >
                                     <svg
                                         width="24"
@@ -146,7 +146,7 @@ export default function Footer() {
                                 {/* Item */}
                                 <Link
                                     to=""
-                                    className="p-3 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
+                                    className="md:p-3 p-2.5 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
                                 >
                                     <svg
                                         width="24"
@@ -175,7 +175,7 @@ export default function Footer() {
                                 {/* Item */}
                                 <Link
                                     to=""
-                                    className="p-3 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
+                                    className="md:p-3 p-2.5 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
                                 >
                                     <svg
                                         width="24"
@@ -194,7 +194,7 @@ export default function Footer() {
                                 {/* Item */}
                                 <Link
                                     to=""
-                                    className="p-3 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
+                                    className="md:p-3 p-2.5 rounded-xl border-2 border-dark-5 group transition-all duration-300 hover:bg-main-2 hover:border-main-2"
                                 >
                                     <svg
                                         width="24"
@@ -217,21 +217,21 @@ export default function Footer() {
             </div>
 
             {/* Footer bottom */}
-            <div className="container mx-auto py-7.5">
-                <div className="flex justify-between gap-4">
-                    <p className="text-sm text-dark-9">
+            <div className="container mx-auto md:py-7.5 py-5 px-4">
+                <div className="flex justify-between text-center gap-4 md:flex-row flex-col-reverse">
+                    <p className="md:text-sm text-xs text-dark-9">
                         © 2025 Rent Metrics. All rights reserved
                     </p>
-                    <div className="flex items-center space-x-9">
+                    <div className="flex items-center justify-center xl:space-x-9 md:space-x-5 space-x-3">
                         <Link
                             to=""
-                            className="text-sm text-dark-9 hover:text-main-2"
+                            className="md:text-sm text-xs text-dark-9 hover:text-main-2"
                         >
                             Privacy Policy
                         </Link>
                         <Link
                             to=""
-                            className="text-sm text-dark-9 hover:text-main-2"
+                            className="md:text-sm text-xs text-dark-9 hover:text-main-2"
                         >
                             Terms and Conditions
                         </Link>

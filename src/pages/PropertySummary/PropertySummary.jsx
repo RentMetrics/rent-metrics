@@ -64,22 +64,18 @@ export default function PropertySummary() {
                                     </div>
                                     <div className="">
                                         <p className="text-dark-3 leading-[1.3] mb-1">
-                                            Revenue
+                                            T-12
                                         </p>
                                         <h6 className="font-bold text-dark-1">
-                                            ${property.revenue}
+                                            {property.revenue}
                                         </h6>
                                     </div>
                                     <div className="">
                                         <p className="text-dark-3 leading-[1.3] mb-1">
-                                            Status
+                                            CoC Yield
                                         </p>
                                         <h6
-                                            className={`font-bold text-success bg-success-light rounded-sm py-[3px] px-4 text-xs capitalize ${
-                                                property.status === "review"
-                                                    ? "text-warning bg-warning-light"
-                                                    : "text-success bg-success-light"
-                                            }`}
+                                            className={`font-bold text-success bg-success-light rounded-sm py-[3px] px-4 text-center text-xs capitalize`}
                                         >
                                             {property.status}
                                         </h6>

@@ -261,7 +261,7 @@ export default function PropertyInformation() {
                                     name="time_of_purchases"
                                     type="number"
                                     autoComplete="time_of_purchases"
-                                    placeholder="July 1, 2022, to June 30, 2023. "
+                                    placeholder="$"
                                     className="block w-full h-13 py-[17px] px-4 rounded-lg text-sm font-medium leading-[1.3] placeholder:text-dark-2 bg-dark-7 border-0 text-dark-1 focus:outline-0"
                                 />
                             </div>

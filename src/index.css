@@ -217,3 +217,12 @@ button[data-headlessui-state="selected"]:focus-visible {
     background-repeat: no-repeat;
 }
 /* Footer style -end */
+
+/* why-rent-metrics-banner */
+.why-rent-metrics-banner {
+    background: url("../src/assets/images/why-rent-metrics-ai-banner-bg.svg")
+        no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+/* why-rent-metrics-banner */

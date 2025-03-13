@@ -25,6 +25,7 @@ import LoadPropertyLayout from "./layouts/LoadPropertyLayout/LoadPropertyLayout"
 import Analytics from "./pages/Analytics/Analytics";
 import AverageEffectiveRent from "./pages/AverageEffectiveRent/AverageEffectiveRent";
 import BudgetVariance from "./pages/BudgetVariance/BudgetVariance";
+import BusinessIntelligence from "./pages/BusinessIntelligence/BusinessIntelligence";
 import Home from "./pages/Home/Home";
 import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
@@ -33,6 +34,7 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import UnitRenovation from "./pages/UnitRenovation/UnitRenovation";
 import UpdateDue from "./pages/UpdateDue/UpdateDue";
 import Valuation from "./pages/Valuation/Valuation";
+import WhyRentMetrics from "./pages/WhyRentMetrics/WhyRentMetrics";
 
 // **Protected Route Component**
 const ProtectedRoute = ({ children }) => {
@@ -68,7 +70,7 @@ const router = createBrowserRouter([
     },
 
     {
-        path: "/home",
+        path: "/home/",
         element: (
             <SignedOut>
                 <HomeLayout />
@@ -76,7 +78,11 @@ const router = createBrowserRouter([
         ),
         children: [
             { path: "", element: <Home /> },
-            { path: "home/solution", element: <Overview /> },
+            { path: "why-rent-metrics", element: <WhyRentMetrics /> },
+            {
+                path: "business-intelligence",
+                element: <BusinessIntelligence />,
+            },
         ],
     },
 

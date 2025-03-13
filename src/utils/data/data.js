@@ -19,8 +19,8 @@ export const propertyList = [
         address: "456 Business Ave, San Francisco, CA",
         image: propertyImage1,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 2,
@@ -28,8 +28,8 @@ export const propertyList = [
         address: "1122 Cyber Road, Techville",
         image: propertyImage2,
         occupancy: "95",
-        revenue: "125,000",
-        status: "review",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 3,
@@ -37,8 +37,8 @@ export const propertyList = [
         address: "5678 Cloud Avenue, Silicon Valley",
         image: propertyImage3,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 4,
@@ -46,8 +46,8 @@ export const propertyList = [
         address: "7890 Digital Drive, Innovation City",
         image: propertyImage4,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 5,
@@ -55,8 +55,8 @@ export const propertyList = [
         address: "9101 Startup Lane, Codeville",
         image: propertyImage5,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 6,
@@ -64,8 +64,8 @@ export const propertyList = [
         address: "3456 AI Boulevard, Future Town",
         image: propertyImage6,
         occupancy: "95",
-        revenue: "125,000",
-        status: "review",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 7,
@@ -73,8 +73,8 @@ export const propertyList = [
         address: "3344 VR Avenue, Meta City",
         image: propertyImage7,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
     {
         id: 8,
@@ -82,8 +82,8 @@ export const propertyList = [
         address: "5566 Blockchain Street, Neural Bay",
         image: propertyImage8,
         occupancy: "95",
-        revenue: "125,000",
-        status: "active",
+        revenue: "NOI",
+        status: "8.3%",
     },
 ];
 
@@ -216,5 +216,33 @@ export const propertyDocumentsData = [
         size: "1.1 MB",
         date: "Updated 2 months ago",
         downloadUrl: "#",
+    },
+];
+
+export const menuItems = [
+    {
+        id: 1,
+        title: "Solution",
+        url: "/solution",
+    },
+    {
+        id: 2,
+        title: "Products",
+        url: "/products",
+    },
+    {
+        id: 3,
+        title: "Resources",
+        url: "/resources",
+    },
+    {
+        id: 4,
+        title: "Why Rent Metrics",
+        url: "/home/why-rent-metrics",
+    },
+    {
+        id: 5,
+        title: "Business Intelligence",
+        url: "/home/business-intelligence",
     },
 ];
