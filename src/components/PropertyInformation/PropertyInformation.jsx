@@ -189,7 +189,7 @@ export default function PropertyInformation() {
                                     name="year_built"
                                     type="number"
                                     autoComplete="year_built"
-                                    placeholder="sq ft."
+                                    placeholder=""
                                     className="block w-full h-13 py-[17px] px-4 rounded-lg text-sm font-medium leading-[1.3] placeholder:text-dark-2 bg-dark-7 border-0 text-dark-1 focus:outline-0"
                                 />
                             </div>

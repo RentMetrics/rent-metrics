@@ -118,11 +118,17 @@ export default function Marketing() {
                             status="Approved"
                             statusCode="500"
                             statusColor="#73EAB2"
+                            percentage="30"
+                            activeColor="#45C7FF"
+                            bgColor="#ECF9FF"
                         />
                         <StatusCard
                             title="Tours"
                             icon={toursIcon}
                             number="2.6k"
+                            percentage="80"
+                            activeColor="#2970CC"
+                            bgColor="#E5E8FF"
                         />
                         <StatusCard
                             title="Applications Submitted"
@@ -131,6 +137,9 @@ export default function Marketing() {
                             status="Convert"
                             statusCode="12%"
                             statusColor="#FFC362"
+                            percentage="12"
+                            activeColor="#30D287"
+                            bgColor="#E9FFF5"
                         />
                         <StatusCard
                             title="Applications Denied"
@@ -139,6 +148,9 @@ export default function Marketing() {
                             status="Denial Ratio"
                             statusCode="9.7%"
                             statusColor="#68C8F8"
+                            percentage="9.7"
+                            activeColor="#FFC362"
+                            bgColor="#FFF4E2"
                         />
                         <StatusCard
                             title="Applications Cancelled"
@@ -147,6 +159,9 @@ export default function Marketing() {
                             status="Cancellation Ratio"
                             statusCode="17.8%"
                             statusColor="#68C8F8"
+                            percentage="30"
+                            activeColor="#FF5050"
+                            bgColor="#FFE9E9"
                         />
                     </div>
                 </div>

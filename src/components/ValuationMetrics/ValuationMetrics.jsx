@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function ValuationMetrics({ title }) {
     return (
         <div className="bg-white p-6 rounded-lg">
