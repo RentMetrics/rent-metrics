@@ -11,6 +11,7 @@ import ConversionLeasingAgentChart from "../../components/Charts/ConversionLeasi
 import ConversionMonthChart from "../../components/Charts/ConversionMonthChart/ConversionMonthChart";
 import ConversionSourceChart from "../../components/Charts/ConversionSourceChart/ConversionSourceChart";
 import PropertyConversionChart from "../../components/Charts/PropertyConversionChart/PropertyConversionChart";
+import LeadsLeasesChart from "../../components/Charts/LeadsLeasesChart/LeadsLeasesChart";
 
 export default function Marketing() {
     return (
@@ -170,6 +171,7 @@ export default function Marketing() {
                     <ConversionMonthChart />
                     <ConversionSourceChart />
                     <ConversionLeasingAgentChart />
+                    <LeadsLeasesChart />
                 </div>
             </div>
         </section>

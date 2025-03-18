@@ -13,7 +13,7 @@ import FinancialOverview from "./pages/FinancialOverview/FinancialOverview";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import Marketing from "./pages/Marketing/Marketing";
 import NoPropertiesFound from "./pages/NoPropertiesFound/NoPropertiesFound";
-import Overview from "./pages/Overview/Overview";
+// import Overview from "./pages/Overview/Overview";
 import PropertySummary from "./pages/PropertySummary/PropertySummary";
 import RequestDemo from "./pages/RequestDemo/RequestDemo";
 // import SignIn from "./pages/SignIn/SignIn";
@@ -29,6 +29,7 @@ import BusinessIntelligence from "./pages/BusinessIntelligence/BusinessIntellige
 import Home from "./pages/Home/Home";
 import LeaseTradeOut from "./pages/LeaseTradeOut/LeaseTradeOut";
 import Occupancy from "./pages/Occupancy/Occupancy";
+import SkylineTechHub from "./pages/SkylineTechHub/SkylineTechHub";
 import Statement from "./pages/Statement/Statement";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import UnitRenovation from "./pages/UnitRenovation/UnitRenovation";
@@ -169,8 +170,8 @@ const router = createBrowserRouter([
             </ProtectedRoute>
         ),
         children: [
+            { path: "skyline-tech-hub", element: <SkylineTechHub /> },
             { path: "property-summary", element: <PropertySummary /> },
-            { path: "property-summary/overview", element: <Overview /> },
             { path: "marketing", element: <Marketing /> },
             { path: "valuation", element: <Valuation /> },
             { path: "asset-intelligence", element: <AssetIntelligence /> },

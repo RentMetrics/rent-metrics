@@ -8,7 +8,7 @@ export default function PropertySummary() {
                 {/* Heading & Button */}
                 <div className="flex gap-6 justify-between items-center mb-[34px] pt-8">
                     <h2 className="text-[28px] font-bold text-dark-1 leading-[1.35]">
-                        Property Summary
+                        Portfolio Summary
                     </h2>
                     <Link
                         to="/add-new-properties"
@@ -84,7 +84,7 @@ export default function PropertySummary() {
 
                                 {/* View details button */}
                                 <Link
-                                    to="/dashboard/property-summary/overview"
+                                    to="/dashboard/skyline-tech-hub"
                                     className="py-[9px] px-6 border border-main rounded-lg font-black flex justify-center text-main w-full leading-[1.5] transition-colors duration-300 hover:bg-main hover:text-white"
                                 >
                                     View Details

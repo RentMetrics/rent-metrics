@@ -25,7 +25,7 @@ const data = [
 
 export default function ConversionSourceChart() {
     return (
-        <div className="bg-white p-6 rounded-lg col-span-1 shadow-lg">
+        <div className="bg-white p-6 rounded-lg col-span-1">
             <h2 className="text-lg font-bold text-dark-1 leading-[1.4] mb-6">
                 Application & Cohort Conversion by Source
             </h2>
