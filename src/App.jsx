@@ -37,6 +37,10 @@ import UpdateDue from "./pages/UpdateDue/UpdateDue";
 import Valuation from "./pages/Valuation/Valuation";
 import WhyRentMetrics from "./pages/WhyRentMetrics/WhyRentMetrics";
 
+import ManualInputofData from "./pages/ManualInputofData/ManualInputofData";
+import UnitInventory from  "./pages/UnitInventory/UnitInventory";
+import MaintenanceInventory from "./pages/MaintenanceInventory/MaintenanceInventory";
+
 // **Protected Route Component**
 const ProtectedRoute = ({ children }) => {
     return (
@@ -195,6 +199,11 @@ const router = createBrowserRouter([
                 element: <UnitRenovation />,
             },
             // { path: "/add-new-properties", element: <AddNewProperty /> },
+            { path: "manual-input-of-data", element: <ManualInputofData /> },
+            { path: "capital-inventory/unit-inventory", element: <UnitInventory /> },
+            { path: "capital-inventory/maintenance-inventory", element: <MaintenanceInventory /> },
+
+            
         ],
     },
     // **404 Not Found Route**

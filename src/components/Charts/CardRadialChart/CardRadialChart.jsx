@@ -48,6 +48,7 @@ export default function CardRadialChart({ percentage, activeColor, bgColor }) {
             colors: [activeColor ? activeColor : "#45C7FF"],
         },
     });
+    
 
     return (
         <div style={{ maxWidth: "70px", maxHeight: "70px" }}>
